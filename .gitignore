@@ -1,0 +1,114 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# PyTorch checkpoints and model weights
+*.ckpt
+*.pt
+*.pth
+*.onnx
+
+# Environment files
+.env
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Pytest cache
+.cache/
+
+# PyTorch Lightning logs
+lightning_logs/
+
+# VSCode settings (optional)
+.vscode/
+
+# System-specific files
+.DS_Store
+Thumbs.db
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# Environments
+.env
+.venv
+ENV/
+env/
+venv/
+
+# PyTorch data caches and datasets
+data/
+cache/
+*.pkl
+*.tar.gz
+
+# TensorBoard log files
+runs/
+events.out.tfevents.*
+
+# Ignore results of type-checking tools
+.mypy_cache/
+.dmypy.json
+dmypy.json
+pyrightconfig.json
+
+# Ignore PEP 8 style guide checkers
+.pytype/
+.pylint.d/
+
+# Ignore any temporary files from the OS
+*.swp
+
+# Ignore dataset directory
+
+Testing_data_aug/data
