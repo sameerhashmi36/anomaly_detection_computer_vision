@@ -112,3 +112,9 @@ pyrightconfig.json
 # Ignore dataset directory
 
 Testing_data_aug/data
+ssae_models/
+model_ssae_cifar100/
+model_ssae_resnet_cifar100/
+model_vqvae_cifar100/
+datasets/
+wandb
