@@ -118,3 +118,5 @@ model_ssae_resnet_cifar100/
 model_vqvae_cifar100/
 datasets/
 wandb
+cutpaste_checkpoints
+nsa_checkpoints
