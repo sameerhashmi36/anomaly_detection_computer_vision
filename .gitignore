@@ -120,3 +120,5 @@ datasets/
 wandb
 cutpaste_checkpoints
 nsa_checkpoints
+nsa_patch_ex_checkpoint
+basic
