@@ -1,2 +1,2 @@
-# ipcv_mini_project_avs7
-Image Processing Course Mini Project
+# Anomaly detection in different approaches
+testing anomaly detection in different ways
