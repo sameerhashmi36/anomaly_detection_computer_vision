@@ -27,8 +27,8 @@ def cut_paste_augment(source, destination, num_patches=1, include_scar=True):
 
         if use_scar:
             # Scar variant: Thin rectangle
-            patch_width = random.randint(2, 16)
-            patch_height = random.randint(10, 25)
+            patch_width = random.randint(2, 40)
+            patch_height = random.randint(10, 200)
         else:
             # Regular CutPaste: Rectangular patch
             patch_area_ratio = random.uniform(0.02, 0.15)
@@ -74,26 +74,27 @@ def cut_paste_augment(source, destination, num_patches=1, include_scar=True):
 
     return augmented_image, mask
 
-# Load an image
-source = cv2.imread('../../datasets/mvtec/carpet/train/good/001.png')
-source = cv2.cvtColor(source, cv2.COLOR_BGR2RGB)
+if __name__ == "__main__":
+    # Load an image
+    source = cv2.imread('../../datasets/mvtec/bottle/train/good/001.png')
+    source = cv2.cvtColor(source, cv2.COLOR_BGR2RGB)
 
-destination = cv2.imread('../../datasets/mvtec/carpet/train/good/002.png')
-destination = cv2.cvtColor(destination, cv2.COLOR_BGR2RGB)
+    destination = cv2.imread('../../datasets/mvtec/bottle/train/good/002.png')
+    destination = cv2.cvtColor(destination, cv2.COLOR_BGR2RGB)
 
-# Apply CutPaste augmentation
-augmented_image, mask = cut_paste_augment(source, destination, num_patches=3, include_scar=True)
+    # Apply CutPaste augmentation
+    augmented_image, mask = cut_paste_augment(source, destination, num_patches=3, include_scar=True)
 
-# Display the augmented image and mask
-plt.figure(figsize=(10, 5))
-plt.subplot(1, 2, 1)
-plt.title("Augmented Image")
-plt.imshow(augmented_image)
-plt.axis('off')
+    # Display the augmented image and mask
+    plt.figure(figsize=(10, 5))
+    plt.subplot(1, 2, 1)
+    plt.title("Augmented Image")
+    plt.imshow(augmented_image)
+    plt.axis('off')
 
-plt.subplot(1, 2, 2)
-plt.title("Mask")
-plt.imshow(mask, cmap='gray')
-plt.axis('off')
+    plt.subplot(1, 2, 2)
+    plt.title("Mask")
+    plt.imshow(mask, cmap='gray')
+    plt.axis('off')
 
-plt.show()
+    plt.show()

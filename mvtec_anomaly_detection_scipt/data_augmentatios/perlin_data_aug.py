@@ -67,10 +67,10 @@ def perlin_augment(source, destination, num_patches=1, scale=50, octaves=4):
 
 
 # Load images
-source = cv2.imread(r'G:/PerlinImgAug/good/000.png')
+source = cv2.imread('../../datasets/mvtec/bottle/train/good/001.png')
 source = cv2.cvtColor(source, cv2.COLOR_BGR2RGB)
 
-destination = cv2.imread(r'G:/PerlinImgAug/good/001.png')
+destination = cv2.imread('../../datasets/mvtec/bottle/train/good/002.png')
 destination = cv2.cvtColor(destination, cv2.COLOR_BGR2RGB)
 
 # Apply Perlin noise augmentation
