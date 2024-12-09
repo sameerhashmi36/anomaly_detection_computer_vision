@@ -2,12 +2,12 @@ import os
 import torch
 import logging
 from tqdm import tqdm
+import matplotlib.pyplot as plt
 
 def train_and_validate(
     model, train_loader, val_loader, criterion, optimizer, num_epochs, device, 
-    log_dir="experiments/experiment_01/logs", save_path="experiments/experiment_01/checkpoints", 
-    start_epoch=0, best_val_loss=float('inf')
-):
+    log_dir, save_path, start_epoch=0, best_val_loss=float('inf')):
+
     # Ensure directories exist
     os.makedirs(log_dir, exist_ok=True)
     os.makedirs(save_path, exist_ok=True)
@@ -21,6 +21,9 @@ def train_and_validate(
         filemode="a"
     )
     logger = logging.getLogger()
+
+    train_losses = []
+    val_losses = []
 
     for epoch in range(start_epoch, num_epochs):
         # Training phase
@@ -44,6 +47,7 @@ def train_and_validate(
             running_train_loss += loss.item()
         
         avg_train_loss = running_train_loss / len(train_loader)
+        train_losses.append(avg_train_loss)
         
         # Validation phase
         model.eval()
@@ -61,6 +65,7 @@ def train_and_validate(
                 running_val_loss += val_loss.item()
         
         avg_val_loss = running_val_loss / len(val_loader)
+        val_losses.append(avg_val_loss)
         
         # Log epoch summary to console and file
         log_message = f"Epoch [{epoch+1}/{num_epochs}] - Train Loss: {avg_train_loss:.4f}, Val Loss: {avg_val_loss:.4f}"
@@ -80,6 +85,34 @@ def train_and_validate(
             log_message = f"Saved model: {model_save_path}"
             print(log_message)
             logger.info(log_message)
+
+    plot_loss(train_losses, val_losses, log_dir)
+
+
+def plot_loss(train_losses, val_losses, log_dir):
+    """
+    Plots and saves the training and validation loss curves.
+
+    Parameters:
+    - train_losses: List of training losses per epoch.
+    - val_losses: List of validation losses per epoch.
+    - log_dir: Directory to save the loss plot.
+    """
+    plt.figure(figsize=(10, 6))
+    plt.plot(range(1, len(train_losses) + 1), train_losses, label="Training Loss")
+    plt.plot(range(1, len(val_losses) + 1), val_losses, label="Validation Loss")
+    plt.xlabel("Epoch")
+    plt.ylabel("Loss")
+    plt.title("Training and Val loss")
+    plt.legend()
+    plt.grid()
+    
+    # Save the plot in the log directory
+    loss_plot_path = os.path.join(log_dir, "loss_plot.png")
+    plt.savefig(loss_plot_path)
+    plt.close()  # Close the plot to avoid memory issues
+    print(f"Loss plot saved at: {loss_plot_path}")
+
 
 
 def load_checkpoint(model, optimizer, checkpoint_path, device):

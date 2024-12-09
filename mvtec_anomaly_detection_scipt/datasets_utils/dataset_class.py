@@ -8,19 +8,23 @@ import random
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from data_augmentatios.cutpaste_dataaugmentation_technique import cut_paste_augment
+from data_augmentatios.fpi_data_aug import fpi_with_scars
+from data_augmentatios.perlin_data_aug import perlin_augment
 
 class DynamicMVTecDataset(Dataset):
-    def __init__(self, good_image_dir, transform=None, include_scar=True):
+    def __init__(self, good_image_dir, transform=None, augmentations=["cutpaste"], include_scar=True):
         """
-        Custom dataset for MVTec, dynamically generating synthetic anomalies.
+        Custom dataset for MVTec, dynamically generating synthetic anomalies with different augmentations.
 
         Parameters:
         - good_image_dir: Path to the directory containing good images.
         - transform: Torchvision transformation to apply to the images and masks.
+        - augmentations: List of augmentation techniques to use (e.g., ["cutpaste", "fpi", "perlin"]).
         - include_scar: Whether to include scar-type augmentations in synthetic data.
         """
         self.good_image_dir = good_image_dir
         self.transform = transform
+        self.augmentations = augmentations
         self.include_scar = include_scar
 
         # Load all good images
@@ -49,9 +53,6 @@ class DynamicMVTecDataset(Dataset):
                     mask = self.transform(mask)
 
                 label = 0  # Label for good images
-
-                # Debug: Log successful good image return
-                # print(f"[DEBUG] Good Image - Index: {idx}, Returned: (image, mask, label)")
                 return image, mask, label
             else:
                 # Synthetic images
@@ -65,13 +66,23 @@ class DynamicMVTecDataset(Dataset):
                 source_np = np.array(source_image)
                 destination_np = np.array(destination_image)
 
-                # Randomize the number of patches (1 to 7)
-                num_patches = random.randint(1, 10)
+                # Randomly select an augmentation technique
+                augmentation_type = random.choice(self.augmentations)
 
-                # Apply CutPaste augmentation
-                augmented_image_np, mask_np = cut_paste_augment(
-                    source_np, destination_np, num_patches=num_patches, include_scar=self.include_scar
-                )
+                if augmentation_type == "cutpaste":
+                    augmented_image_np, mask_np = cut_paste_augment(
+                        source_np, destination_np, num_patches=random.randint(1, 7), include_scar=self.include_scar
+                    )
+                elif augmentation_type == "fpi":
+                    augmented_image_np, mask_np = fpi_with_scars(
+                        source_np, destination_np, num_patches=random.randint(1, 7), include_scar=self.include_scar
+                    )
+                elif augmentation_type == "perlin":
+                    augmented_image_np, mask_np = perlin_augment(
+                        source_np, destination_np, num_patches=random.randint(1, 7), scale=50, octaves=4
+                    )
+                else:
+                    raise ValueError(f"Unknown augmentation type: {augmentation_type}")
 
                 # Convert back to PIL images
                 augmented_image = Image.fromarray(augmented_image_np)
@@ -82,12 +93,8 @@ class DynamicMVTecDataset(Dataset):
                     mask = self.transform(mask)
 
                 label = 1  # Label for synthetic anomaly images
-
-                # Debug: Log successful synthetic image return
-                # print(f"[DEBUG] Synthetic Image - Index: {idx}, Num Patches: {num_patches}, Returned: (image, mask, label)")
                 return augmented_image, mask, label
             
         except Exception as e:
-            # Debug: Log the error
             print(f"[ERROR] Error at Index {idx}: {e}")
             return None

@@ -73,33 +73,36 @@ def fpi_with_scars(source, destination, num_patches=1, alpha_range=(0.4, 0.6), i
 
     return augmented_image, mask
 
-# Load an image
-source = cv2.imread('/Users/raj/University/anomaly_detection_computer_vision/datasets/mvtec/leather/train/good/001.png')
-source = cv2.cvtColor(source, cv2.COLOR_BGR2RGB)
 
-destination = cv2.imread('/Users/raj/University/anomaly_detection_computer_vision/datasets/mvtec/leather/train/good/002.png')
-destination = cv2.cvtColor(destination, cv2.COLOR_BGR2RGB)
+if __name__ == "__main__":
 
-# Apply FPI augmentation with scars
-num_patches = random.randint(1, 10)  # Randomly choose between 1 and 10
-augmented_image, mask = fpi_with_scars(
-    source, 
-    destination, 
-    num_patches=num_patches, 
-    alpha_range=(0.4, 0.6), 
-    include_scar=True
-)
+        # Load an image
+        source = cv2.imread('../../datasets/mvtec/bottle/train/good/001.png')
+        source = cv2.cvtColor(source, cv2.COLOR_BGR2RGB)
 
-# Display the augmented image and mask
-plt.figure(figsize=(10, 5))
-plt.subplot(1, 2, 1)
-plt.title("Augmented Image")
-plt.imshow(augmented_image)
-plt.axis('off')
+        destination = cv2.imread('../../datasets/mvtec/bottle/train/good/002.png')
+        destination = cv2.cvtColor(destination, cv2.COLOR_BGR2RGB)
 
-plt.subplot(1, 2, 2)
-plt.title("Mask")
-plt.imshow(mask, cmap='gray')
-plt.axis('off')
+        # Apply FPI augmentation with scars
+        num_patches = random.randint(1, 10)  # Randomly choose between 1 and 10
+        augmented_image, mask = fpi_with_scars(
+            source, 
+            destination, 
+            num_patches=num_patches, 
+            alpha_range=(0.4, 0.6), 
+            include_scar=True
+        )
 
-plt.show()
+        # Display the augmented image and mask
+        plt.figure(figsize=(10, 5))
+        plt.subplot(1, 2, 1)
+        plt.title("Augmented Image")
+        plt.imshow(augmented_image)
+        plt.axis('off')
+
+        plt.subplot(1, 2, 2)
+        plt.title("Mask")
+        plt.imshow(mask, cmap='gray')
+        plt.axis('off')
+
+        plt.show()

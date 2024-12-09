@@ -12,6 +12,14 @@ from training.train import train_and_validate, load_checkpoint
 # Device setup
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
+# infos
+info = {
+    "class":"bottle",
+    "augmentation": "perlin",
+    "checkpoint_path": "experiment_03_bottle_perlin",
+    "log_path": "experiment_03_bottle_perlin"
+        }
+
 # Data transform
 transform = transforms = T.Compose([
             T.Resize((256, 256)),
@@ -20,7 +28,7 @@ transform = transforms = T.Compose([
         ])
 
 # Dataset setup
-dataset = DynamicMVTecDataset(good_image_dir="../datasets/mvtec/bottle/train/good/", transform=transform)
+dataset = DynamicMVTecDataset(good_image_dir=f"../datasets/mvtec/{info['class']}/train/good/", transform=transform, augmentations=[f"{info['augmentation']}"])
 
 # Dataset setup
 train_data, val_data = split_dataset(dataset=dataset)
@@ -36,7 +44,7 @@ criterion = nn.BCELoss()
 optimizer = torch.optim.Adam(model.parameters(), lr=1e-4)
 
 # Checkpoint path
-checkpoint_path = "experiments/experiment_01/checkpoints/model_epoch_10_valloss_0.3503.pth"
+checkpoint_path = f"experiments/{info['checkpoint_path']}/checkpoints/model_epoch_20_valloss_0.1822.pth"
 
 # Resume training if checkpoint exists
 start_epoch = 0
@@ -46,7 +54,7 @@ if os.path.exists(checkpoint_path):
 
 
 # Train and validate
-num_epochs = 20
+num_epochs = 50
 train_and_validate(
     model=model,
     train_loader=train_loader,
@@ -55,8 +63,8 @@ train_and_validate(
     optimizer=optimizer,
     num_epochs=num_epochs,
     device=device,
-    log_dir="experiments/experiment_01/logs",
-    save_path="experiments/experiment_01/checkpoints",
+    log_dir=f"experiments/{info['log_path']}/logs",
+    save_path=f"experiments/{info['checkpoint_path']}/checkpoints",
     start_epoch=start_epoch,
     best_val_loss=best_val_loss
 )
