@@ -1,0 +1,140 @@
+2024-12-10 19:27:30,128 - INFO - Epoch [1/100] - Train Loss: 0.9468, Val Loss: 0.7558
+2024-12-10 19:27:30,351 - INFO - Saved model: experiments_rec_dec/experiment_01_bottle_cutpaste/checkpoints/model_epoch_1_valloss_0.7558.pth
+2024-12-10 19:27:42,950 - INFO - Epoch [2/100] - Train Loss: 0.6629, Val Loss: 0.5491
+2024-12-10 19:27:43,180 - INFO - Saved model: experiments_rec_dec/experiment_01_bottle_cutpaste/checkpoints/model_epoch_2_valloss_0.5491.pth
+2024-12-10 19:27:56,544 - INFO - Epoch [3/100] - Train Loss: 0.4604, Val Loss: 0.3928
+2024-12-10 19:27:56,770 - INFO - Saved model: experiments_rec_dec/experiment_01_bottle_cutpaste/checkpoints/model_epoch_3_valloss_0.3928.pth
+2024-12-10 19:28:09,781 - INFO - Epoch [4/100] - Train Loss: 0.3529, Val Loss: 0.2734
+2024-12-10 19:28:09,966 - INFO - Saved model: experiments_rec_dec/experiment_01_bottle_cutpaste/checkpoints/model_epoch_4_valloss_0.2734.pth
+2024-12-10 19:28:22,954 - INFO - Epoch [5/100] - Train Loss: 0.2844, Val Loss: 0.2264
+2024-12-10 19:28:23,128 - INFO - Saved model: experiments_rec_dec/experiment_01_bottle_cutpaste/checkpoints/model_epoch_5_valloss_0.2264.pth
+2024-12-10 19:28:36,265 - INFO - Epoch [6/100] - Train Loss: 0.2259, Val Loss: 0.2015
+2024-12-10 19:28:36,536 - INFO - Saved model: experiments_rec_dec/experiment_01_bottle_cutpaste/checkpoints/model_epoch_6_valloss_0.2015.pth
+2024-12-10 19:28:50,178 - INFO - Epoch [7/100] - Train Loss: 0.2090, Val Loss: 0.1873
+2024-12-10 19:28:50,389 - INFO - Saved model: experiments_rec_dec/experiment_01_bottle_cutpaste/checkpoints/model_epoch_7_valloss_0.1873.pth
+2024-12-10 19:29:04,910 - INFO - Epoch [8/100] - Train Loss: 0.1926, Val Loss: 0.1625
+2024-12-10 19:29:05,118 - INFO - Saved model: experiments_rec_dec/experiment_01_bottle_cutpaste/checkpoints/model_epoch_8_valloss_0.1625.pth
+2024-12-10 19:29:19,909 - INFO - Epoch [9/100] - Train Loss: 0.1800, Val Loss: 0.1408
+2024-12-10 19:29:20,123 - INFO - Saved model: experiments_rec_dec/experiment_01_bottle_cutpaste/checkpoints/model_epoch_9_valloss_0.1408.pth
+2024-12-10 19:29:34,782 - INFO - Epoch [10/100] - Train Loss: 0.1488, Val Loss: 0.1191
+2024-12-10 19:29:34,996 - INFO - Saved model: experiments_rec_dec/experiment_01_bottle_cutpaste/checkpoints/model_epoch_10_valloss_0.1191.pth
+2024-12-10 19:29:50,077 - INFO - Epoch [11/100] - Train Loss: 0.1316, Val Loss: 0.1218
+2024-12-10 19:30:03,392 - INFO - Epoch [12/100] - Train Loss: 0.1335, Val Loss: 0.1286
+2024-12-10 19:30:16,589 - INFO - Epoch [13/100] - Train Loss: 0.1231, Val Loss: 0.1090
+2024-12-10 19:30:16,835 - INFO - Saved model: experiments_rec_dec/experiment_01_bottle_cutpaste/checkpoints/model_epoch_13_valloss_0.1090.pth
+2024-12-10 19:30:29,837 - INFO - Epoch [14/100] - Train Loss: 0.1207, Val Loss: 0.0952
+2024-12-10 19:30:30,106 - INFO - Saved model: experiments_rec_dec/experiment_01_bottle_cutpaste/checkpoints/model_epoch_14_valloss_0.0952.pth
+2024-12-10 19:30:43,020 - INFO - Epoch [15/100] - Train Loss: 0.1053, Val Loss: 0.0939
+2024-12-10 19:30:43,266 - INFO - Saved model: experiments_rec_dec/experiment_01_bottle_cutpaste/checkpoints/model_epoch_15_valloss_0.0939.pth
+2024-12-10 19:30:56,214 - INFO - Epoch [16/100] - Train Loss: 0.1003, Val Loss: 0.0823
+2024-12-10 19:30:56,458 - INFO - Saved model: experiments_rec_dec/experiment_01_bottle_cutpaste/checkpoints/model_epoch_16_valloss_0.0823.pth
+2024-12-10 19:31:09,253 - INFO - Epoch [17/100] - Train Loss: 0.0985, Val Loss: 0.0798
+2024-12-10 19:31:09,493 - INFO - Saved model: experiments_rec_dec/experiment_01_bottle_cutpaste/checkpoints/model_epoch_17_valloss_0.0798.pth
+2024-12-10 19:31:22,497 - INFO - Epoch [18/100] - Train Loss: 0.0982, Val Loss: 0.0790
+2024-12-10 19:31:22,731 - INFO - Saved model: experiments_rec_dec/experiment_01_bottle_cutpaste/checkpoints/model_epoch_18_valloss_0.0790.pth
+2024-12-10 19:31:35,801 - INFO - Epoch [19/100] - Train Loss: 0.0916, Val Loss: 0.0780
+2024-12-10 19:31:36,046 - INFO - Saved model: experiments_rec_dec/experiment_01_bottle_cutpaste/checkpoints/model_epoch_19_valloss_0.0780.pth
+2024-12-10 19:31:49,103 - INFO - Epoch [20/100] - Train Loss: 0.0883, Val Loss: 0.0700
+2024-12-10 19:31:49,370 - INFO - Saved model: experiments_rec_dec/experiment_01_bottle_cutpaste/checkpoints/model_epoch_20_valloss_0.0700.pth
+2024-12-10 19:32:02,338 - INFO - Epoch [21/100] - Train Loss: 0.0868, Val Loss: 0.0736
+2024-12-10 19:32:15,167 - INFO - Epoch [22/100] - Train Loss: 0.0837, Val Loss: 0.0720
+2024-12-10 19:32:28,197 - INFO - Epoch [23/100] - Train Loss: 0.0793, Val Loss: 0.0712
+2024-12-10 19:32:41,065 - INFO - Epoch [24/100] - Train Loss: 0.0762, Val Loss: 0.0630
+2024-12-10 19:32:41,307 - INFO - Saved model: experiments_rec_dec/experiment_01_bottle_cutpaste/checkpoints/model_epoch_24_valloss_0.0630.pth
+2024-12-10 19:32:54,255 - INFO - Epoch [25/100] - Train Loss: 0.0766, Val Loss: 0.0686
+2024-12-10 19:33:07,406 - INFO - Epoch [26/100] - Train Loss: 0.0733, Val Loss: 0.0616
+2024-12-10 19:33:07,664 - INFO - Saved model: experiments_rec_dec/experiment_01_bottle_cutpaste/checkpoints/model_epoch_26_valloss_0.0616.pth
+2024-12-10 19:33:20,783 - INFO - Epoch [27/100] - Train Loss: 0.0708, Val Loss: 0.0703
+2024-12-10 19:33:33,770 - INFO - Epoch [28/100] - Train Loss: 0.0714, Val Loss: 0.0615
+2024-12-10 19:33:34,016 - INFO - Saved model: experiments_rec_dec/experiment_01_bottle_cutpaste/checkpoints/model_epoch_28_valloss_0.0615.pth
+2024-12-10 19:33:47,027 - INFO - Epoch [29/100] - Train Loss: 0.0708, Val Loss: 0.0523
+2024-12-10 19:33:47,271 - INFO - Saved model: experiments_rec_dec/experiment_01_bottle_cutpaste/checkpoints/model_epoch_29_valloss_0.0523.pth
+2024-12-10 19:34:00,303 - INFO - Epoch [30/100] - Train Loss: 0.0661, Val Loss: 0.0567
+2024-12-10 19:34:13,357 - INFO - Epoch [31/100] - Train Loss: 0.0645, Val Loss: 0.0604
+2024-12-10 19:34:26,288 - INFO - Epoch [32/100] - Train Loss: 0.0680, Val Loss: 0.0593
+2024-12-10 19:34:39,211 - INFO - Epoch [33/100] - Train Loss: 0.0662, Val Loss: 0.0591
+2024-12-10 19:34:52,271 - INFO - Epoch [34/100] - Train Loss: 0.0624, Val Loss: 0.0530
+2024-12-10 19:35:05,262 - INFO - Epoch [35/100] - Train Loss: 0.0634, Val Loss: 0.0479
+2024-12-10 19:35:05,508 - INFO - Saved model: experiments_rec_dec/experiment_01_bottle_cutpaste/checkpoints/model_epoch_35_valloss_0.0479.pth
+2024-12-10 19:35:18,408 - INFO - Epoch [36/100] - Train Loss: 0.0635, Val Loss: 0.0549
+2024-12-10 19:35:31,513 - INFO - Epoch [37/100] - Train Loss: 0.0633, Val Loss: 0.0537
+2024-12-10 19:35:44,353 - INFO - Epoch [38/100] - Train Loss: 0.0622, Val Loss: 0.0534
+2024-12-10 19:35:57,515 - INFO - Epoch [39/100] - Train Loss: 0.0645, Val Loss: 0.0509
+2024-12-10 19:36:10,549 - INFO - Epoch [40/100] - Train Loss: 0.0647, Val Loss: 0.0477
+2024-12-10 19:36:10,816 - INFO - Saved model: experiments_rec_dec/experiment_01_bottle_cutpaste/checkpoints/model_epoch_40_valloss_0.0477.pth
+2024-12-10 19:36:23,580 - INFO - Epoch [41/100] - Train Loss: 0.0612, Val Loss: 0.0491
+2024-12-10 19:36:36,701 - INFO - Epoch [42/100] - Train Loss: 0.0614, Val Loss: 0.0483
+2024-12-10 19:36:49,664 - INFO - Epoch [43/100] - Train Loss: 0.0621, Val Loss: 0.0518
+2024-12-10 19:37:02,903 - INFO - Epoch [44/100] - Train Loss: 0.0572, Val Loss: 0.0487
+2024-12-10 19:37:15,962 - INFO - Epoch [45/100] - Train Loss: 0.0580, Val Loss: 0.0471
+2024-12-10 19:37:16,205 - INFO - Saved model: experiments_rec_dec/experiment_01_bottle_cutpaste/checkpoints/model_epoch_45_valloss_0.0471.pth
+2024-12-10 19:37:28,867 - INFO - Epoch [46/100] - Train Loss: 0.0581, Val Loss: 0.0519
+2024-12-10 19:37:41,769 - INFO - Epoch [47/100] - Train Loss: 0.0538, Val Loss: 0.0452
+2024-12-10 19:37:42,010 - INFO - Saved model: experiments_rec_dec/experiment_01_bottle_cutpaste/checkpoints/model_epoch_47_valloss_0.0452.pth
+2024-12-10 19:37:54,944 - INFO - Epoch [48/100] - Train Loss: 0.0503, Val Loss: 0.0483
+2024-12-10 19:38:08,005 - INFO - Epoch [49/100] - Train Loss: 0.0531, Val Loss: 0.0450
+2024-12-10 19:38:08,239 - INFO - Saved model: experiments_rec_dec/experiment_01_bottle_cutpaste/checkpoints/model_epoch_49_valloss_0.0450.pth
+2024-12-10 19:38:21,177 - INFO - Epoch [50/100] - Train Loss: 0.0535, Val Loss: 0.0419
+2024-12-10 19:38:21,427 - INFO - Saved model: experiments_rec_dec/experiment_01_bottle_cutpaste/checkpoints/model_epoch_50_valloss_0.0419.pth
+2024-12-10 19:38:34,347 - INFO - Epoch [51/100] - Train Loss: 0.0509, Val Loss: 0.0438
+2024-12-10 19:38:47,281 - INFO - Epoch [52/100] - Train Loss: 0.0501, Val Loss: 0.0443
+2024-12-10 19:39:00,743 - INFO - Epoch [53/100] - Train Loss: 0.0478, Val Loss: 0.0456
+2024-12-10 19:39:13,981 - INFO - Epoch [54/100] - Train Loss: 0.0512, Val Loss: 0.0425
+2024-12-10 19:39:27,029 - INFO - Epoch [55/100] - Train Loss: 0.0497, Val Loss: 0.0397
+2024-12-10 19:39:27,275 - INFO - Saved model: experiments_rec_dec/experiment_01_bottle_cutpaste/checkpoints/model_epoch_55_valloss_0.0397.pth
+2024-12-10 19:39:40,304 - INFO - Epoch [56/100] - Train Loss: 0.0485, Val Loss: 0.0407
+2024-12-10 19:39:53,339 - INFO - Epoch [57/100] - Train Loss: 0.0494, Val Loss: 0.0381
+2024-12-10 19:39:53,586 - INFO - Saved model: experiments_rec_dec/experiment_01_bottle_cutpaste/checkpoints/model_epoch_57_valloss_0.0381.pth
+2024-12-10 19:40:06,368 - INFO - Epoch [58/100] - Train Loss: 0.0506, Val Loss: 0.0415
+2024-12-10 19:40:19,310 - INFO - Epoch [59/100] - Train Loss: 0.0479, Val Loss: 0.0407
+2024-12-10 19:40:32,388 - INFO - Epoch [60/100] - Train Loss: 0.0471, Val Loss: 0.0412
+2024-12-10 19:40:45,344 - INFO - Epoch [61/100] - Train Loss: 0.0483, Val Loss: 0.0393
+2024-12-10 19:40:58,590 - INFO - Epoch [62/100] - Train Loss: 0.0479, Val Loss: 0.0378
+2024-12-10 19:40:58,843 - INFO - Saved model: experiments_rec_dec/experiment_01_bottle_cutpaste/checkpoints/model_epoch_62_valloss_0.0378.pth
+2024-12-10 19:41:11,701 - INFO - Epoch [63/100] - Train Loss: 0.0467, Val Loss: 0.0367
+2024-12-10 19:41:11,940 - INFO - Saved model: experiments_rec_dec/experiment_01_bottle_cutpaste/checkpoints/model_epoch_63_valloss_0.0367.pth
+2024-12-10 19:41:24,956 - INFO - Epoch [64/100] - Train Loss: 0.0450, Val Loss: 0.0384
+2024-12-10 19:41:38,018 - INFO - Epoch [65/100] - Train Loss: 0.0459, Val Loss: 0.0359
+2024-12-10 19:41:38,262 - INFO - Saved model: experiments_rec_dec/experiment_01_bottle_cutpaste/checkpoints/model_epoch_65_valloss_0.0359.pth
+2024-12-10 19:41:50,972 - INFO - Epoch [66/100] - Train Loss: 0.0458, Val Loss: 0.0367
+2024-12-10 19:42:03,984 - INFO - Epoch [67/100] - Train Loss: 0.0472, Val Loss: 0.0397
+2024-12-10 19:42:16,885 - INFO - Epoch [68/100] - Train Loss: 0.0455, Val Loss: 0.0377
+2024-12-10 19:42:29,988 - INFO - Epoch [69/100] - Train Loss: 0.0440, Val Loss: 0.0436
+2024-12-10 19:42:43,036 - INFO - Epoch [70/100] - Train Loss: 0.0445, Val Loss: 0.0348
+2024-12-10 19:42:43,277 - INFO - Saved model: experiments_rec_dec/experiment_01_bottle_cutpaste/checkpoints/model_epoch_70_valloss_0.0348.pth
+2024-12-10 19:42:56,400 - INFO - Epoch [71/100] - Train Loss: 0.0441, Val Loss: 0.0366
+2024-12-10 19:43:09,455 - INFO - Epoch [72/100] - Train Loss: 0.0421, Val Loss: 0.0372
+2024-12-10 19:43:22,470 - INFO - Epoch [73/100] - Train Loss: 0.0403, Val Loss: 0.0376
+2024-12-10 19:43:35,563 - INFO - Epoch [74/100] - Train Loss: 0.0400, Val Loss: 0.0360
+2024-12-10 19:43:48,638 - INFO - Epoch [75/100] - Train Loss: 0.0441, Val Loss: 0.0329
+2024-12-10 19:43:48,882 - INFO - Saved model: experiments_rec_dec/experiment_01_bottle_cutpaste/checkpoints/model_epoch_75_valloss_0.0329.pth
+2024-12-10 19:44:01,982 - INFO - Epoch [76/100] - Train Loss: 0.0427, Val Loss: 0.0387
+2024-12-10 19:44:14,785 - INFO - Epoch [77/100] - Train Loss: 0.0438, Val Loss: 0.0343
+2024-12-10 19:44:27,808 - INFO - Epoch [78/100] - Train Loss: 0.0397, Val Loss: 0.0362
+2024-12-10 19:44:40,882 - INFO - Epoch [79/100] - Train Loss: 0.0395, Val Loss: 0.0312
+2024-12-10 19:44:41,130 - INFO - Saved model: experiments_rec_dec/experiment_01_bottle_cutpaste/checkpoints/model_epoch_79_valloss_0.0312.pth
+2024-12-10 19:44:54,030 - INFO - Epoch [80/100] - Train Loss: 0.0409, Val Loss: 0.0371
+2024-12-10 19:45:07,004 - INFO - Epoch [81/100] - Train Loss: 0.0382, Val Loss: 0.0340
+2024-12-10 19:45:20,051 - INFO - Epoch [82/100] - Train Loss: 0.0389, Val Loss: 0.0297
+2024-12-10 19:45:20,295 - INFO - Saved model: experiments_rec_dec/experiment_01_bottle_cutpaste/checkpoints/model_epoch_82_valloss_0.0297.pth
+2024-12-10 19:45:33,046 - INFO - Epoch [83/100] - Train Loss: 0.0391, Val Loss: 0.0287
+2024-12-10 19:45:33,286 - INFO - Saved model: experiments_rec_dec/experiment_01_bottle_cutpaste/checkpoints/model_epoch_83_valloss_0.0287.pth
+2024-12-10 19:45:46,287 - INFO - Epoch [84/100] - Train Loss: 0.0411, Val Loss: 0.0320
+2024-12-10 19:45:59,180 - INFO - Epoch [85/100] - Train Loss: 0.0381, Val Loss: 0.0311
+2024-12-10 19:46:12,463 - INFO - Epoch [86/100] - Train Loss: 0.0361, Val Loss: 0.0327
+2024-12-10 19:46:25,507 - INFO - Epoch [87/100] - Train Loss: 0.0380, Val Loss: 0.0272
+2024-12-10 19:46:25,752 - INFO - Saved model: experiments_rec_dec/experiment_01_bottle_cutpaste/checkpoints/model_epoch_87_valloss_0.0272.pth
+2024-12-10 19:46:38,768 - INFO - Epoch [88/100] - Train Loss: 0.0397, Val Loss: 0.0291
+2024-12-10 19:46:51,774 - INFO - Epoch [89/100] - Train Loss: 0.0388, Val Loss: 0.0332
+2024-12-10 19:47:04,845 - INFO - Epoch [90/100] - Train Loss: 0.0379, Val Loss: 0.0325
+2024-12-10 19:47:17,852 - INFO - Epoch [91/100] - Train Loss: 0.0365, Val Loss: 0.0307
+2024-12-10 19:47:30,858 - INFO - Epoch [92/100] - Train Loss: 0.0352, Val Loss: 0.0326
+2024-12-10 19:47:43,906 - INFO - Epoch [93/100] - Train Loss: 0.0340, Val Loss: 0.0289
+2024-12-10 19:47:56,825 - INFO - Epoch [94/100] - Train Loss: 0.0373, Val Loss: 0.0274
+2024-12-10 19:48:09,701 - INFO - Epoch [95/100] - Train Loss: 0.0351, Val Loss: 0.0331
+2024-12-10 19:48:22,727 - INFO - Epoch [96/100] - Train Loss: 0.0362, Val Loss: 0.0270
+2024-12-10 19:48:22,969 - INFO - Saved model: experiments_rec_dec/experiment_01_bottle_cutpaste/checkpoints/model_epoch_96_valloss_0.0270.pth
+2024-12-10 19:48:35,795 - INFO - Epoch [97/100] - Train Loss: 0.0352, Val Loss: 0.0275
+2024-12-10 19:48:48,785 - INFO - Epoch [98/100] - Train Loss: 0.0338, Val Loss: 0.0280
+2024-12-10 19:49:01,811 - INFO - Epoch [99/100] - Train Loss: 0.0362, Val Loss: 0.0300
+2024-12-10 19:49:14,583 - INFO - Epoch [100/100] - Train Loss: 0.0382, Val Loss: 0.0301

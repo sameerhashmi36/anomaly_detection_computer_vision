@@ -4,66 +4,58 @@ import random
 import matplotlib.pyplot as plt
 from perlin_noise import PerlinNoise
 
-def perlin_augment(source, destination, num_patches=1, scale=50, octaves=4):
+def perlin_augment(source, destination, num_patches=3, scale=50, octaves=4, beta_range=(0.1, 1.0)):
     """
-    Applies Perlin noise augmentation to the destination image.
-    
+    Applies Perlin noise augmentation to the destination image with blending inspired by DRAEM.
+
     Parameters:
-    - source: Source image (numpy array) to generate Perlin noise patches.
-    - destination: Destination image (numpy array) to apply the Perlin noise onto.
-    - num_patches: Number of noise patches to apply to the image.
+    - source: Texture source image for anomaly simulation.
+    - destination: Destination image to apply the Perlin noise onto.
+    - num_patches: Number of noise patches to apply.
     - scale: Scale of the Perlin noise.
     - octaves: Number of octaves for the Perlin noise.
+    - beta_range: Blending opacity range for the anomalies.
 
     Returns:
     - augmented_image: The augmented destination image.
-    - mask: Binary mask indicating augmented regions (1 for augmentation, 0 otherwise).
+    - mask: Binary mask indicating augmented regions.
     """
     augmented_image = destination.copy()
     height, width, _ = destination.shape
     mask = np.zeros((height, width), dtype=np.uint8)  # Initialize mask
-
-    # Initialize Perlin noise generator
     noise = PerlinNoise(octaves=octaves, seed=random.randint(0, 100))
 
     for _ in range(num_patches):
-        # Randomly decide the patch size and location
+        # Generate Perlin noise
         patch_width = random.randint(30, 100)
         patch_height = random.randint(30, 100)
-        
-        # Generate Perlin noise for the patch
         perlin_patch = np.zeros((patch_height, patch_width))
-
         for i in range(patch_height):
             for j in range(patch_width):
-                # Generate Perlin noise at a scaled position
                 perlin_patch[i, j] = noise([i / scale, j / scale])
         
-        # Normalize Perlin noise to [0, 255]
         perlin_patch = cv2.normalize(perlin_patch, None, 0, 255, cv2.NORM_MINMAX).astype(np.uint8)
+        patch_mask = (perlin_patch > random.randint(50, 200)).astype(np.uint8)
 
-        # Randomly select the paste location on the destination image
-        paste_x = random.randint(0, width - patch_width)
-        paste_y = random.randint(0, height - patch_height)
+        # Randomly select texture region from the source image
+        src_y = random.randint(0, source.shape[0] - patch_height)
+        src_x = random.randint(0, source.shape[1] - patch_width)
+        texture_patch = source[src_y:src_y + patch_height, src_x:src_x + patch_width]
 
-        # Ensure dimensions of the patch match the slicing area
-        if paste_y + patch_height > augmented_image.shape[0]:
-            patch_height = augmented_image.shape[0] - paste_y
-        if paste_x + patch_width > augmented_image.shape[1]:
-            patch_width = augmented_image.shape[1] - paste_x
+        # Blend the texture patch with the destination image
+        dest_y = random.randint(0, height - patch_height)
+        dest_x = random.randint(0, width - patch_width)
+        beta = random.uniform(*beta_range)
 
-        # Crop the Perlin noise patch if needed
-        perlin_patch = perlin_patch[:patch_height, :patch_width]
+        augmented_image[dest_y:dest_y + patch_height, dest_x:dest_x + patch_width] = \
+            (1 - beta) * destination[dest_y:dest_y + patch_height, dest_x:dest_x + patch_width] + \
+            beta * (patch_mask[..., None] * texture_patch)
 
-        # Apply the Perlin noise to the destination image
-        augmented_image[paste_y:paste_y + patch_height, paste_x:paste_x + patch_width] = \
-            cv2.addWeighted(augmented_image[paste_y:paste_y + patch_height, paste_x:paste_x + patch_width], 0.7, 
-                            cv2.cvtColor(perlin_patch, cv2.COLOR_GRAY2RGB), 0.3, 0)
+        # Update the binary mask
+        mask[dest_y:dest_y + patch_height, dest_x:dest_x + patch_width] = patch_mask
 
-        # Update the mask to mark the augmented region
-        mask[paste_y:paste_y + patch_height, paste_x:paste_x + patch_width] = 1
+    return augmented_image.astype(np.uint8), mask
 
-    return augmented_image, mask
 
 
 
