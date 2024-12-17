@@ -8,17 +8,19 @@ from datasets_utils.data_loader import get_loaders
 import torchvision.transforms as T
 from torch.utils.data import DataLoader
 from training.train_rec_disc import train_and_validate, load_checkpoint
+# from training.loss_functions_ssim_mse_focal import ReconstructionLoss, FocalLoss
+
 
 # Device setup
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
 # infos
 info = {
-    "class":"bottle",
+    "class":"hazelnut",
     "augmentation": "cutpaste",
-    "checkpoint_path": "experiment_01_bottle_cutpaste",
-    "log_path": "experiment_01_bottle_cutpaste",
-    "experiment_dir": "experiments_rec_disc"
+    "checkpoint_path": "experiment_03_hazelnut_cutpaste_mse_bce",
+    "log_path": "experiment_03_hazelnut_cutpaste_mse_bce",
+    "experiment_dir": "experiments_rec_disc_hazelnut"
         }
 
 # Data transform
@@ -40,6 +42,7 @@ train_loader, val_loader = get_loaders(train_data=train_data, val_data=val_data,
 model = ResNetEncDecWithDiscrimination().to(device)
 
 # Loss functions
+# rec_loss_fn = ReconstructionLoss()
 rec_loss_fn = nn.MSELoss()
 disc_loss_fn = nn.BCELoss()
 
@@ -47,7 +50,7 @@ disc_loss_fn = nn.BCELoss()
 optimizer = torch.optim.Adam(model.parameters(), lr=1e-4)
 
 # Checkpoint path
-checkpoint_path = f"experiments/{info['checkpoint_path']}/checkpoints/model_epoch_49_valloss_0.0613.pth"
+checkpoint_path = f"{info['experiment_dir']}/{info['checkpoint_path']}/checkpoints/model_epoch_80_valloss_0.0683.pth"
 
 # Resume training if checkpoint exists
 start_epoch = 0

@@ -33,9 +33,15 @@ def train_and_validate(
         for images, masks, labels in tqdm(train_loader, desc=f"Epoch {epoch+1}/{num_epochs} - Training", leave=False):
             images, masks, labels = images.to(device), masks.to(device), labels.to(device)
 
+
+            # print("masks.shape: ", masks.shape)
             # Forward pass
             optimizer.zero_grad()
             reconstructed, anomaly_map = model(images)
+
+            # masks = masks.long()  # Ensure integer type
+            # num_classes = anomaly_map.shape[1]
+            # masks = torch.clamp(masks, 0, num_classes - 1)
 
             # Compute loss
             loss = compute_loss(
@@ -62,6 +68,10 @@ def train_and_validate(
             for val_images, val_masks, val_labels in tqdm(val_loader, desc=f"Epoch {epoch+1}/{num_epochs} - Validation", leave=False):
                 val_images, val_masks, val_labels = val_images.to(device), val_masks.to(device), val_labels.to(device)
                 val_reconstructed, val_anomaly_map = model(val_images)
+
+                # val_masks = val_masks.long()  # Ensure integer type
+                # val_num_classes = val_anomaly_map.shape[1]
+                # val_masks = torch.clamp(val_masks, 0, val_num_classes - 1)
 
                 val_loss = compute_loss(
                     original=val_images,

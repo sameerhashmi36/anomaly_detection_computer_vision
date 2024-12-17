@@ -61,7 +61,7 @@ class ResNetEncDecSubNet(nn.Module):
         # Note: decrease the complexity on the model
         # Note: train more epochs
         
-        # NIN layer (512 -> 256 -> 128)
+        # NIN layer (256 -> 128 -> 64)
         self.nin = nn.Sequential(
             nn.Conv2d(256, 128, kernel_size=1, stride=1, bias=False),
             nn.ReLU(inplace=True),
@@ -124,7 +124,6 @@ class DiscriminativeSubNet(nn.Module):
     def __init__(self):
         super(DiscriminativeSubNet, self).__init__()
         
-        # U-Net-like structure
         self.encoder = nn.Sequential(
             nn.Conv2d(6, 64, kernel_size=3, stride=1, padding=1),  # Input: Original + Reconstructed (3+3=6 channels)
             nn.ReLU(inplace=True),
@@ -144,7 +143,8 @@ class DiscriminativeSubNet(nn.Module):
         )
 
     def forward(self, original, reconstructed):
-        x = torch.cat((original, reconstructed), dim=1)  # Concatenate along channel dimension
+        # Concatenate along channel dimension
+        x = torch.cat((original, reconstructed), dim=1) 
         x = self.encoder(x)
         x = self.decoder(x)
         return x
